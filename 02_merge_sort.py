@@ -31,6 +31,8 @@ def MergeSort(A):
             
             k += 1
 
+        # When one of the subarrays reaches its end
+        # copy the remaining part of the other subarray  
         while(i < len(L)):
             A[k] = L[i]
             i += 1
@@ -41,6 +43,7 @@ def MergeSort(A):
             j += 1
             k += 1
 
+# Driver code
 array = [6, 5, 12, 10, 9, 1]
 MergeSort(array)
 print('Sorted array is:', array, sep='\n')

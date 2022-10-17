@@ -12,7 +12,7 @@ def knapsack(W, wt, val):
             W -= item[0]
             result_knapsack.append(item)
              
-    return (result_knapsack, max_value)
+    return max_value
 
 
 value = [60, 100, 120]

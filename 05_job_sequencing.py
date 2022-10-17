@@ -9,7 +9,7 @@ def job_sequencing(arr):
         for item in arr:
             if item[2] == i + 1 and item[1] > max_item[1]:
                 max_item = item
-        job_execution.append(max_item)
+        job_execution.append((max_item[0], max_item[1]))
     
     return job_execution
 

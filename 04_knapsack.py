@@ -11,7 +11,7 @@ def knapsack(W, wt, val):
             max_value += item[1]
             W -= item[0]
             result_knapsack.append(item)
-             
+
     return max_value
 
 

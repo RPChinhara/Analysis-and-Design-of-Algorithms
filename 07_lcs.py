@@ -16,7 +16,6 @@ def lcs(S1, S2, m, n):
     index = L[m][n]
 
     result = [""] * (index+1)
-    result[index] = ""
 
     i = m
     j = n
@@ -38,8 +37,8 @@ def lcs(S1, S2, m, n):
     print("LCS: " + "".join(result))
 
 
-S1 = "ACADB"
-S2 = "CBDA"
+S1 = "ABCD"
+S2 = "ACE"
 m = len(S1)
 n = len(S2)
 lcs(S1, S2, m, n)

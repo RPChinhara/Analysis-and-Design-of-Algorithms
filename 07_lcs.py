@@ -15,15 +15,15 @@ def lcs(S1, S2, m, n):
 
     index = L[m][n]
 
-    lcs_algo = [""] * (index+1)
-    lcs_algo[index] = ""
+    result = [""] * (index+1)
+    result[index] = ""
 
     i = m
     j = n
     while i > 0 and j > 0:
 
         if S1[i-1] == S2[j-1]:
-            lcs_algo[index-1] = S1[i-1]
+            result[index-1] = S1[i-1]
             i -= 1
             j -= 1
             index -= 1
@@ -35,7 +35,7 @@ def lcs(S1, S2, m, n):
             
     # Printing the sub sequences
     print("S1 : " + S1 + "\nS2 : " + S2)
-    print("LCS: " + "".join(lcs_algo))
+    print("LCS: " + "".join(result))
 
 
 S1 = "ACADB"

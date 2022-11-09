@@ -31,7 +31,7 @@ def lcs(S1, S2, m, n):
             i -= 1
         else:
             j -= 1
-            
+
     # Printing the sub sequences
     print("S1 : " + S1 + "\nS2 : " + S2)
     print("LCS: " + "".join(result))

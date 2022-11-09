@@ -3,7 +3,7 @@
 def lcs(S1, S2, m, n):
     L = [[0 for x in range(n+1)] for x in range(m+1)]
 
-    # Building the mtrix in bottom-up way
+    # Building the matrix in bottom-up way
     for i in range(m+1):
         for j in range(n+1):
             if i == 0 or j == 0:

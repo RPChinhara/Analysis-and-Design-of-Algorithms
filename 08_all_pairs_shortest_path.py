@@ -30,10 +30,3 @@ output = shortest_path(cost_matrix, V)
 print("Output Matrix:")
 for i in range(V):
     print(output[i])
-
-sum = 0
-for i in range(V):
-    for j in range(i + 1, V):
-        sum += output[i][j]
-
-print("Sum of shortest path is: ", sum)

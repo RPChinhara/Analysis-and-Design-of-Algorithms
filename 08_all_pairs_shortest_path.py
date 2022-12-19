@@ -3,19 +3,13 @@ import sys
 INF = sys.maxsize
 
 def shortest_path(costMat, V):
-    graph = [[INF for i in range(V)] for j in range(V)]
-
-    for i in range(V):
-        for j in range(V):
-            graph[i][j] = costMat[i][j]
-
     for k in range(V):
         for i in range(V):
             for j in range(V):
-                if graph[i][k] != INF and graph[k][j] != INF:
-                    graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
+                if costMat[i][k] != INF and costMat[k][j] != INF:
+                    costMat[i][j] = min(costMat[i][j], costMat[i][k] + costMat[k][j])
 
-    return graph
+    return costMat
 
 
 # Number of Vertices

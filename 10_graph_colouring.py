@@ -1,51 +1,48 @@
-def addEdge(adj, v, w):
-    adj[v].append(w)
-    adj[w].append(v) 
-    return adj
+V = 4
 
-def graphColouring(adj, V):
-    result = [-1] * V
-    result[0] = 0
+def printConfiguration(colorArray):
+    print("The assigned colors are as follows:")
+    for i in range(4):
+        print("Vertex: ", i, " Color: ", colorArray[i])
 
-    available = [False] * V
-
-    for i in range(1, V):
-        for j in adj[i]:
-            if (result[j] != -1):
-                available[result[j]] = True
-
-        colour = 0
-        while colour < V:
-            if (available[colour] == False):
-                break
-            colour += 1
-
-        result[i] = colour 
-        
-        for j in adj[i]:
-            if (result[j] != -1):
-                available[result[j]] = False
-
+def isSafe(v, colorArray, vertex):
     for i in range(V):
-        print("Vertex", i, " --->  Color", result[i])
+        if graph[v][i] == 1 and colorArray[i] == vertex:
+            return False
+        return True
+
+def graphColoringAlgorithmUtil(m, colorArray, currentVertex):
+    if currentVertex == V:
+        return True
+
+    for i in range(1, m + 1):
+        if isSafe(currentVertex, colorArray, i) == True:
+            colorArray[currentVertex] = i
+            if graphColoringAlgorithmUtil(m, colorArray, currentVertex + 1):
+                return True
+
+            colorArray[currentVertex] = 0
 
 
-g1 = [[] for i in range(5)]
-g1 = addEdge(g1, 0, 1)
-g1 = addEdge(g1, 0, 2)
-g1 = addEdge(g1, 1, 2)
-g1 = addEdge(g1, 1, 3)
-g1 = addEdge(g1, 2, 3)
-g1 = addEdge(g1, 3, 4)
-print("Coloring of graph 1 ")
-graphColouring(g1, 5)
+def graphColoringAlgorithm(colorArray, m):
+    colorArray = [0] * V
 
-g2 = [[] for i in range(5)]
-g2 = addEdge(g2, 0, 1)
-g2 = addEdge(g2, 0, 2)
-g2 = addEdge(g2, 1, 2)
-g2 = addEdge(g2, 1, 4)
-g2 = addEdge(g2, 2, 4)
-g2 = addEdge(g2, 4, 3)
-print("\nColoring of graph 2")
-graphColouring(g2, 5)
+    if graphColoringAlgorithmUtil(m, colorArray, 0) == None:
+        print("Coloring is not possible!")
+        return False
+
+    print("Coloring is possible!")
+    printConfiguration(colorArray)
+    return True
+
+
+
+graph = [
+    [0, 1, 1, 1],
+    [1, 0, 1, 0],
+    [1, 1, 0, 1],
+    [1, 0, 1, 0]
+]
+m = 3
+
+graphColoringAlgorithm(graph, m)

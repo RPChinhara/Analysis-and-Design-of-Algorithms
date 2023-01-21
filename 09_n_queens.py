@@ -5,13 +5,10 @@ def printBoard(board):
         print('\n')
 
 def isSafe(board, row, col):
-
-    # check row on left side
     for i in range(col):
         if board[row][i] == 1:
             return False
-    
-    # check upper left diagonal
+
     m = row
     n = col
     while(m >= 0 and n >= 0):
@@ -19,8 +16,7 @@ def isSafe(board, row, col):
             return False
         m -= 1
         n -= 1
-    
-    # Check lower diagonal on left side
+
     m = row
     n = col
     while(m < N and n >= 0):

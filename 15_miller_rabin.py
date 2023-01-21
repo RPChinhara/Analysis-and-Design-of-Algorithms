@@ -1,4 +1,3 @@
-# Python3 program Miller-Rabin primality test
 import random
 
 def power(x, y, p):
@@ -9,7 +8,7 @@ def power(x, y, p):
 		if (y & 1):
 			res = (res * x) % p
 
-		y = y>>1 # y = y/2
+		y = y//2
 		x = (x * x) % p
 
 	return res

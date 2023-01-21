@@ -11,11 +11,7 @@ def shortest_path(costMat, V):
 
     return costMat
 
-
-# Number of Vertices
 V = 7
-
-# Cost Matrix
 cost_matrix = [ [0, 3, 6, INF, INF, INF, INF],
                 [3, 0, 2, 1, INF, INF, INF],
                 [6, 2, 0, 1, 4, 2, INF],
@@ -23,7 +19,6 @@ cost_matrix = [ [0, 3, 6, INF, INF, INF, INF],
                 [INF, INF, 4, 2, 0, 2, 1],
                 [INF, INF, 2, INF, 2, 0, 1],
                 [INF, INF, INF, 4, 1, 1, 0]]
-
 
 output = shortest_path(cost_matrix, V)
 

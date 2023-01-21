@@ -5,7 +5,7 @@ def binary_search(arr, x):
     low = 0
     high = len(arr) - 1
     mid = 0
- 
+
     while low <= high:
         mid = (high + low) // 2
         # If x is greater, ignore left half
@@ -26,7 +26,7 @@ x = 10
 
 # Find if 10 is present in the given sample array
 result = binary_search(arr, x)
- 
+
 if result != -1:
     print("Element is present at index", str(result))
 else:

@@ -13,7 +13,7 @@ def optCost(freq, i, j):
 			Min = cost
 	return Min + fsum
 
-def optimalSearchTree(keys, freq, n):
+def optimalSearchTree(freq, n):
 	return optCost(freq, 0, n - 1)
 
 def Sum(freq, i, j):
@@ -22,7 +22,6 @@ def Sum(freq, i, j):
 		s += freq[k]
 	return s
 
-keys = [10, 12, 20]
 freq = [34, 8, 50]
-n = len(keys)
-print("Cost of Optimal BST is", optimalSearchTree(keys, freq, n))
+n = len(freq)
+print("Cost of Optimal BST is", optimalSearchTree(freq, n))

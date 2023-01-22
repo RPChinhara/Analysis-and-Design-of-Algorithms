@@ -6,8 +6,7 @@ def shortest_path(costMat, V):
     for k in range(V):
         for i in range(V):
             for j in range(V):
-                if costMat[i][k] != INF and costMat[k][j] != INF:
-                    costMat[i][j] = min(costMat[i][j], costMat[i][k] + costMat[k][j])
+                costMat[i][j] = min(costMat[i][j], costMat[i][k] + costMat[k][j])
 
     return costMat
 
